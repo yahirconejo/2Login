@@ -1,0 +1,279 @@
+html{
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
+}
+
+#nav{
+    top:0;
+    left: 0;
+    position: fixed;
+    z-index: 10;
+    width: 100vw;
+    height: 100px;
+}
+
+#burgernav {
+    background-color: #5D5D5A;
+    padding: 3px;
+    border-radius: 4px;
+    margin-top: 120px;
+    margin-right: calc(20vw + 10px);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    transition: all .5 ease-in-out;
+}
+
+#burger {
+    width: 30px;
+    height: 3px;
+    background-color: #FFF4E3;
+    border-radius: 10px;
+    transition: all .5s ease-in-out;
+    opacity: 1;
+}
+#burger::before, 
+#burger::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: inherit;
+    border-radius: 10px;
+    transition: all .5s ease-in-out;
+    opacity: 1;
+}
+#burger::before {
+    transform: translateY(-10px);
+}
+
+#burger::after{
+    transform: translateY(10px);
+}
+
+#burgernav.open #burger {
+    transform: translateX(-50px);
+    background-color: transparent;
+    box-shadow: none;
+}
+
+#burgernav.open #burger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+    background-color: #ccc;
+}
+
+#burgernav.open #burger::after{
+    transform: rotate(-45deg) translate(35px, 35px);
+    background-color: #ccc;
+}
+
+/* the overlay after pressing burger*/
+#navoverlay{
+    height: calc(100% - 0px);
+    width: 0;
+    position: fixed;
+    z-index: 9;
+    top: 0px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s; 
+}
+#overlaycontent{
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+  
+#overlaycontent a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;  
+}
+  
+#overlaycontent a:hover{
+    color: #f1f1f1;
+}
+
+
+
+
+
+#backgroundLOG{
+    background-color: #EBE9F6;
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+#square{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    background-color: #6A5C55;
+    border-radius: 10px;
+    width: 70%;
+    height: 80%;
+    z-index: 1;
+    overflow-y: scroll ;
+    transition: all .5s;
+    display: flex;
+}
+
+.container {
+    position: absolute;
+    margin: 6% 10vw;
+    color:#F66E00;
+    font-size: 17px;
+  }
+  
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 1.5vh 1.8vw;
+    margin: 1vh 0 1vh 0;
+    display: inline-block;
+    border: none;
+    border-radius: 25px;
+    background: #f1f1f1;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 4vh;
+  }
+  
+
+  button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 1.5vh 2vw;
+    text-align: center;
+    margin: 8px 0;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    transform: translateX(40%);
+    width: 60%;
+  }
+  
+  button:hover {
+    opacity:1;
+  }
+  
+
+  
+
+ .signupbtn {
+    left: 0;
+    
+  }
+  
+
+    @media screen and (max-height: 750px) {
+        input[type=text], input[type=password] {
+            padding: 14px;
+          }
+        
+          button {
+            padding: 12px 20px;
+          }
+
+  }
+
+  #sliders{
+    position: relative;
+    overflow: hidden;
+    top: 10px;
+    left:0;
+    width: 3594px;
+    height: calc(100% - 10px);
+  }
+
+.left{
+    animation: leftmove 55s linear infinite;
+}
+
+@keyframes leftmove {
+    0%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    15%{
+        opacity: 0.5;
+    }
+    30%{
+        opacity: 1;
+    }
+    45%{
+        opacity: 0.5;
+    }
+    60%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 0.5;
+    }
+    100%{
+        transform: translateX(-100%);
+        opacity: 1;
+    }
+}
+
+.right{
+    animation: rightmove 55s linear infinite;
+}
+
+@keyframes rightmove {
+    0%{
+        transform: translateX(-100%);
+        opacity: 0.5;
+    }
+    15%{
+        opacity: 1;
+    }
+    30%{
+        opacity: 0.5;
+    }
+    45%{
+        opacity: 1;
+    }
+    60%{
+        opacity: 0.5;
+    }
+    75%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateX(0%);
+        opacity: 0.5;
+    }
+}
